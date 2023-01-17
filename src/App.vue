@@ -18,15 +18,22 @@ export default {
     let process = ref(null);
     let display = ref("0");
     let comma = ref(false);
+    let err = ref(false);
 
     const result = {
       "+": () => {
-        return num1.value + num2.value;
+        return (num1.value * 10 + num2.value * 10) / 10;
       },
       "-": () => {
         return num1.value - num2.value;
       },
       "/": () => {
+        if (num2.value == 0) {
+          err.value = true;
+          num1.value = 0;
+          return;
+        }
+
         return num1.value / num2.value;
       },
       "*": () => {
@@ -39,45 +46,58 @@ export default {
 
     const numericKeyPressed = (key) => {
       if (!process.value && key != ".") {
-        num1.value = comma.value
-          ? parseFloat(`${num1.value}.${key}`)
-          : parseFloat(`${num1.value}${key}`);
+        num1.value =
+          comma.value && Number.isInteger(num1.value)
+            ? parseFloat(`${num1.value}.${key}`)
+            : parseFloat(`${num1.value}${key}`);
         display.value = num1.value.toString();
-        comma.value = false;
-      } else if (process.value && key != ".") {
-        num2.value = comma.value
-          ? parseFloat(`${num2.value}.${key}`)
-          : parseFloat(`${num2.value}${key}`);
-        display.value = num2.value.toString();
-        comma.value = false;
-      } else {
+      } else if (!process.value && key == "." && !comma.value) {
         comma.value = true;
-        display.value += ".";
+        display.value = `${num1.value}.`;
+      } else if (process.value && key != ".") {
+        num2.value =
+          comma.value && Number.isInteger(num2.value)
+            ? parseFloat(`${num2.value}.${key}`)
+            : parseFloat(`${num2.value}${key}`);
+        display.value = num2.value.toString();
+      } else if (process.value && key == "." && !comma.value) {
+        comma.value = true;
+        display.value = `${num2.value}.`;
       }
     };
 
     const processKeyPressed = (key) => {
-      if ((key == "+" || key == "-" || key == "*" || key == "/" || key == "=") && num2.value > 0) {
-        num1.value = result[process.value ?? key]();
+      if ((key == "+" || key == "-" || key == "*" || key == "/" || key == "=") && !process.value) {
         num2.value = 0;
+        comma.value = false;
         process.value = key;
       } else if (
         (key == "+" || key == "-" || key == "*" || key == "/" || key == "=") &&
-        num2.value == 0
+        process.value
       ) {
+        num1.value = result[process.value]();
+        num2.value = 0;
+        comma.value = false;
         process.value = key;
       } else if (key == "del" && num2.value > 0) {
-        num2.value = num2.value > 9 ? parseFloat(`${num2.value}`.slice(0, -1)) : 0;
-      } else if (key == "del" && num2.value == 0) {
-        num1.value = num1.value > 9 ? parseFloat(`${num1.value}`.slice(0, -1)) : 0;
+        num2.value = num2.value > 0 ? parseFloat(`${num2.value}`.slice(0, -1)) : 0;
+        comma.value = !Number.isInteger(num2.value);
+      } else if (key == "del" && num2.value == 0 && num1.value > 0) {
+        num1.value = num1.value > 0 ? parseFloat(`${num1.value}`.slice(0, -1)) : 0;
+        comma.value = !Number.isInteger(num1.value);
       } else if (key == "reset") {
         num1.value = 0;
         num2.value = 0;
+        err.value = false;
         comma.value = false;
         process.value = null;
       }
 
-      display.value = num2.value > 0 ? num2.value.toString() : num1.value.toString();
+      display.value = err.value
+        ? "ERROR"
+        : num2.value > 0
+        ? num2.value.toString()
+        : Number(num1.value).toString();
     };
 
     return { numericKeyPressed, processKeyPressed, display };
