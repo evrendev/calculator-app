@@ -16,7 +16,7 @@ export default {
     let num1 = ref(0);
     let num2 = ref(0);
     let process = ref(null);
-    let display = ref(0);
+    let display = ref("0");
     let comma = ref(false);
 
     const result = {
@@ -42,13 +42,13 @@ export default {
         num1.value = comma.value
           ? parseFloat(`${num1.value}.${key}`)
           : parseFloat(`${num1.value}${key}`);
-        display.value = num1.value;
+        display.value = num1.value.toString();
         comma.value = false;
       } else if (process.value && key != ".") {
         num2.value = comma.value
           ? parseFloat(`${num2.value}.${key}`)
           : parseFloat(`${num2.value}${key}`);
-        display.value = num2.value;
+        display.value = num2.value.toString();
         comma.value = false;
       } else {
         comma.value = true;
@@ -77,7 +77,7 @@ export default {
         process.value = null;
       }
 
-      display.value = num2.value > 0 ? num2.value : num1.value;
+      display.value = num2.value > 0 ? num2.value.toString() : num1.value.toString();
     };
 
     return { numericKeyPressed, processKeyPressed, display };

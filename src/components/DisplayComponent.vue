@@ -7,7 +7,7 @@ export default {
   name: "DisplayComponent",
   props: {
     display: {
-      type: Number,
+      type: String,
       value: null,
     },
   },
