@@ -18,7 +18,7 @@ body {
         width: 20.43rem;
       }
 
-      header{
+      header {
         margin-bottom: var(--size-700);
 
         h1 {
@@ -45,9 +45,9 @@ body {
             .inputs {
               margin-top: 5px;
               border-radius: var(--size-200);
-              
+
               input {
-                &[type=radio] {
+                &[type="radio"] {
                   display: none;
                 }
               }
@@ -66,72 +66,71 @@ body {
       }
 
       section {
-          &.display {
-              padding: var(--size-700);
-              border-radius: 10px;
-              text-align: right;
-              line-height: 3.25rem;
-              letter-spacing: -0.933333px;
+        &.display {
+          padding: var(--size-700);
+          border-radius: 10px;
+          text-align: right;
+          line-height: 3.25rem;
+          letter-spacing: -0.933333px;
 
-              @include media(mobile) {
-                padding: var(--size-500);
-                letter-spacing: -0.666667px;
-                font-size: var(--fs-800);
-                line-height: 2.3125rem;
-              }
-              
+          @include media(mobile) {
+            padding: var(--size-500);
+            letter-spacing: -0.666667px;
+            font-size: var(--fs-800);
+            line-height: 2.3125rem;
+          }
+        }
+
+        &.keypad {
+          margin-top: var(--size-500);
+          padding: var(--size-700);
+          border-radius: 10px;
+
+          @include media(mobile) {
+            padding: var(--size-500);
           }
 
-          &.keypad {
-            margin-top: var(--size-500);
-            padding: var(--size-700);
+          > div:not(:last-child) {
+            margin-bottom: var(--size-500);
+          }
+
+          button {
+            line-height: 2.3125rem;
+            letter-spacing: -0.666667px;
+            padding: var(--size-200);
             border-radius: 10px;
+            width: 100px;
+            height: 64px;
+            border: none;
+            cursor: pointer;
 
             @include media(mobile) {
-              padding: var(--size-500);
+              border-radius: 5px;
+              width: 60px;
+              font-size: var(--fs-700);
+              padding: var(--size-100);
             }
 
-            > div:not(:last-child) {
-              margin-bottom: var(--size-500);
-            }
-
-            button {
-              line-height: 2.3125rem;
-              letter-spacing: -0.666667px;
-              padding: var(--size-200);
-              border-radius: 10px;
-              width: 100px;
-              height: 64px;
-              border: none;
-              cursor: pointer;
+            &.w-2x {
+              width: 227px;
 
               @include media(mobile) {
-                border-radius: 5px;
-                width: 60px;
-                font-size: var(--fs-700);
-                padding: var(--size-100);
+                width: 133px;
               }
+            }
 
-              &.w-2x {
-                width: 227px;
+            &.text-200,
+            &.text-400 {
+              letter-spacing: -0.466667px;
 
-                @include media(mobile) {
-                  width: 133px;
-                }
-              }
-
-              &.text-200,
-              &.text-400 {
-                letter-spacing: -0.466667px;
-
-                @include media(mobile) {
-                  font-size: 1.25rem;
-                  line-height: 1.125rem;
-                  letter-spacing: -0.333333px;
-                }
+              @include media(mobile) {
+                font-size: 1.25rem;
+                line-height: 1.125rem;
+                letter-spacing: -0.333333px;
               }
             }
           }
+        }
       }
     }
   }

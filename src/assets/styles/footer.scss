@@ -1,20 +1,20 @@
 @import "./shared/variables";
 
-body {  
-    @for $i from 1 through 3 {
-        &.theme#{$i}{
-            footer {
-                .attribution {
-                    margin-top: 2rem;
-                    text-align: center;
-                    color: var(--clr-theme#{$i}-text-100);
-            
-                    a {
-                        color: var(--clr-theme#{$i}-keys-400);
-                        text-decoration: none;
-                    }
-                }
-            }
+body {
+  @for $i from 1 through 3 {
+    &.theme#{$i} {
+      footer {
+        .attribution {
+          margin-top: 2rem;
+          text-align: center;
+          color: var(--clr-theme#{$i}-text-100);
+
+          a {
+            color: var(--clr-theme#{$i}-keys-400);
+            text-decoration: none;
+          }
         }
+      }
     }
+  }
 }

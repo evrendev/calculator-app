@@ -1,9 +1,17 @@
 :root {
   //Colors
-  --clr-theme1-backgrounds-400: hsl(222, 26%, 31%); // Very dark desaturated blue (main background) 
-  --clr-theme1-backgrounds-500: hsl(224, 36%, 15%); // Very dark desaturated blue (screen background)
-  --clr-theme1-backgrounds-600: hsl(223, 31%, 20%); // Very dark desaturated blue (toggle background, keypad background)
-  
+  --clr-theme1-backgrounds-400: hsl(222, 26%, 31%); // Very dark desaturated blue (main background)
+  --clr-theme1-backgrounds-500: hsl(
+    224,
+    36%,
+    15%
+  ); // Very dark desaturated blue (screen background)
+  --clr-theme1-backgrounds-600: hsl(
+    223,
+    31%,
+    20%
+  ); // Very dark desaturated blue (toggle background, keypad background)
+
   --clr-theme1-keys-100: hsl(224, 28%, 35%); // Desaturated dark blue (key shadow)
   --clr-theme1-keys-200: hsl(225, 21%, 49%); // Desaturated dark blue (key background)
   --clr-theme1-keys-300: hsl(225, 51%, 76%); // Desaturated dark blue (key background)
@@ -13,19 +21,22 @@
   --clr-theme1-keys-700: hsl(30, 25%, 89%); // Light grayish orange (key background)
   --clr-theme1-keys-800: hsl(28, 16%, 65%); // Grayish orange (key shadow)
   --clr-theme1-keys-900: hsl(0, 0%, 100%); // White
-  
+
   --clr-theme1-text-100: hsl(0, 0%, 100%); // White
   --clr-theme1-text-200: hsl(0, 0%, 100%); // White
   --clr-theme1-text-300: hsl(0, 0%, 100%); // White
   --clr-theme1-text-400: hsl(0, 0%, 100%); // White
   --clr-theme1-text-600: hsl(221, 14%, 31%); // Very dark grayish blue
   --clr-theme1-text-700: hsl(221, 14%, 31%); // Very dark grayish blue
-  
-  
+
   --clr-theme2-backgrounds-400: hsl(0, 0%, 90%); // Light gray (main background)
   --clr-theme2-backgrounds-500: hsl(0, 0%, 93%); // Very light gray (screen background)
-  --clr-theme2-backgrounds-600: hsl(0, 5%, 81%); // Grayish red (toggle background, keypad background)
-  
+  --clr-theme2-backgrounds-600: hsl(
+    0,
+    5%,
+    81%
+  ); // Grayish red (toggle background, keypad background)
+
   --clr-theme2-keys-100: hsl(185, 58%, 25%); // Very dark cyan (key shadow)
   --clr-theme2-keys-200: hsl(185, 42%, 37%); // Dark moderate cyan (key background)
   --clr-theme2-keys-300: hsl(185, 40%, 56%); // Desaturated dark blue (key background)
@@ -35,18 +46,25 @@
   --clr-theme2-keys-700: hsl(45, 7%, 89%); // Light grayish yellow (key background)
   --clr-theme2-keys-800: hsl(35, 11%, 61%); // Dark grayish orange (key shadow)
   --clr-theme2-keys-900: hsl(0, 0%, 100%); // White
-  
+
   --clr-theme2-text-100: hsl(60, 10%, 19%); // Very dark grayish yellow
   --clr-theme2-text-200: hsl(0, 0%, 100%); // White
   --clr-theme2-text-400: hsl(0, 0%, 100%); // White
   --clr-theme2-text-600: hsl(60, 10%, 19%); // Very dark grayish yellow
   --clr-theme2-text-700: hsl(0, 0%, 100%); // White
-  
-  
+
   --clr-theme3-backgrounds-400: hsl(268, 75%, 9%); // Very dark violet (main background)
-  --clr-theme3-backgrounds-500: hsl(268, 71%, 12%); // Very dark violet (toggle background, keypad background, screen background)
-  --clr-theme3-backgrounds-600: hsl(268, 71%, 12%); // Very dark violet (toggle background, keypad background, screen background)
-  
+  --clr-theme3-backgrounds-500: hsl(
+    268,
+    71%,
+    12%
+  ); // Very dark violet (toggle background, keypad background, screen background)
+  --clr-theme3-backgrounds-600: hsl(
+    268,
+    71%,
+    12%
+  ); // Very dark violet (toggle background, keypad background, screen background)
+
   --clr-theme3-keys-100: hsl(285, 91%, 52%); // Very dark cyan (key shadow)
   --clr-theme3-keys-200: hsl(281, 89%, 26%); // Vivid magenta (key shadow)
   --clr-theme3-keys-300: hsl(280, 56%, 44%); // Pure cyan (key background, toggle)
@@ -56,14 +74,14 @@
   --clr-theme3-keys-700: hsl(268, 47%, 21%); // Very dark violet (key background)
   --clr-theme3-keys-800: hsl(290, 70%, 36%); // Dark magenta (key shadow)
   --clr-theme3-keys-900: hsl(268, 54%, 44%); //
-  
+
   --clr-theme3-text-500: hsl(198, 20%, 13%); // Very dark blue
   --clr-theme3-text-600: hsl(52, 100%, 62%); // Light yellow
   --clr-theme3-text-100: hsl(52, 100%, 62%); // Light yellow
   --clr-theme3-text-200: hsl(0, 0%, 100%); // White
 
   //Font Family
-  --ff-primary: 'League Spartan', sans-serif;;
+  --ff-primary: "League Spartan", sans-serif;
 
   //Font Defines
   --ff-body: var(--ff-primary);
@@ -72,9 +90,9 @@
   --fw-regular: 700;
 
   //Sizes
-  --size-100: .6875rem;
-  --size-200: .75rem;
-  --size-300: .8125rem;
+  --size-100: 0.6875rem;
+  --size-200: 0.75rem;
+  --size-300: 0.8125rem;
   --size-400: 1rem;
   --size-500: 1.5rem;
   --size-600: 1.75rem;

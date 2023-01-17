@@ -1,94 +1,92 @@
-body {  
-    @for $i from 1 through 3 {
-        &.theme#{$i}{
-            background-color: var(--clr-theme#{$i}-backgrounds-400);
+body {
+  @for $i from 1 through 3 {
+    &.theme#{$i} {
+      background-color: var(--clr-theme#{$i}-backgrounds-400);
 
-            header {
-                h1 {
-                    color: var(--clr-theme#{$i}-text-100);
-                }
-
-                .theme-changer {
-                    h3 {
-                        color: var(--clr-theme#{$i}-text-100);
-                    }
-
-                    .option-group {
-                        .labels {
-                            span {
-                                color: var(--clr-theme#{$i}-text-100);
-                            }
-                        }
-
-                        .inputs {
-                            background-color: var(--clr-theme#{$i}-backgrounds-600);
-
-                            input {
-                                &[type=radio] {
-                                    &:checked {
-                                        + label {
-                                            background-color: var(--clr-theme#{$i}-keys-400);
-
-                                            &:hover {
-                                                background-color: var(--clr-theme#{$i}-keys-600);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            section {
-                &.display {
-                    background-color: var(--clr-theme#{$i}-backgrounds-500);
-                    color: var(--clr-theme#{$i}-text-100);
-                }
-
-                &.keypad {
-                    background-color: var(--clr-theme#{$i}-backgrounds-600);
-
-                    button {
-                        background-color: var(--clr-theme#{$i}-keys-700);
-                        box-shadow: inset 0px -4px 0px var(--clr-theme#{$i}-keys-800);
-                        color: var(--clr-theme#{$i}-text-600);
-
-                        &:hover{
-                            background-color: var(--clr-theme#{$i}-keys-900);
-                        }
-
-                        
-                        &.keys-200 {
-                            background-color: var(--clr-theme#{$i}-keys-200);
-                            box-shadow: inset 0px -4px 0px var(--clr-theme#{$i}-keys-100);
-
-                            &:hover{
-                                background-color: var(--clr-theme#{$i}-keys-300);
-                            }
-                        }
-
-                        &.text-200 {
-                            color: var(--clr-theme#{$i}-text-200);
-                        }
-                        
-                        &.keys-400 {
-                            background-color: var(--clr-theme#{$i}-keys-400);
-                            box-shadow: inset 0px -4px 0px var(--clr-theme#{$i}-keys-500);
-
-                            &:hover{
-                                background-color: var(--clr-theme#{$i}-keys-600);
-                            }
-                        }
-
-                        &.text-400 {
-                            color: var(--clr-theme#{$i}-text-400);
-                        }
-                    }
-                }
-            }
+      header {
+        h1 {
+          color: var(--clr-theme#{$i}-text-100);
         }
+
+        .theme-changer {
+          h3 {
+            color: var(--clr-theme#{$i}-text-100);
+          }
+
+          .option-group {
+            .labels {
+              span {
+                color: var(--clr-theme#{$i}-text-100);
+              }
+            }
+
+            .inputs {
+              background-color: var(--clr-theme#{$i}-backgrounds-600);
+
+              input {
+                &[type="radio"] {
+                  &:checked {
+                    + label {
+                      background-color: var(--clr-theme#{$i}-keys-400);
+
+                      &:hover {
+                        background-color: var(--clr-theme#{$i}-keys-600);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      section {
+        &.display {
+          background-color: var(--clr-theme#{$i}-backgrounds-500);
+          color: var(--clr-theme#{$i}-text-100);
+        }
+
+        &.keypad {
+          background-color: var(--clr-theme#{$i}-backgrounds-600);
+
+          button {
+            background-color: var(--clr-theme#{$i}-keys-700);
+            box-shadow: inset 0px -4px 0px var(--clr-theme#{$i}-keys-800);
+            color: var(--clr-theme#{$i}-text-600);
+
+            &:hover {
+              background-color: var(--clr-theme#{$i}-keys-900);
+            }
+
+            &.keys-200 {
+              background-color: var(--clr-theme#{$i}-keys-200);
+              box-shadow: inset 0px -4px 0px var(--clr-theme#{$i}-keys-100);
+
+              &:hover {
+                background-color: var(--clr-theme#{$i}-keys-300);
+              }
+            }
+
+            &.text-200 {
+              color: var(--clr-theme#{$i}-text-200);
+            }
+
+            &.keys-400 {
+              background-color: var(--clr-theme#{$i}-keys-400);
+              box-shadow: inset 0px -4px 0px var(--clr-theme#{$i}-keys-500);
+
+              &:hover {
+                background-color: var(--clr-theme#{$i}-keys-600);
+              }
+            }
+
+            &.text-400 {
+              color: var(--clr-theme#{$i}-text-400);
+            }
+          }
+        }
+      }
     }
+  }
 }
-  
