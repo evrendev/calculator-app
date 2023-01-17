@@ -1,0 +1,12 @@
+$grid-breakpoints: (
+  mobile: 375px,
+  desktop: 1440px,
+);
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @media (max-width: map-get($grid-breakpoints, $key)) {
+      @content;
+    }
+  }
+}

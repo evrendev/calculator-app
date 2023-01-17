@@ -1,0 +1,138 @@
+@import "./responsive";
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  min-height: 708px;
+  margin: var(--size-700) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #app {
+    main {
+      max-width: 33.75rem;
+      width: 33.75rem;
+
+      @include media(mobile) {
+        width: 20.43rem;
+      }
+
+      header{
+        margin-bottom: var(--size-700);
+
+        h1 {
+          line-height: 1.8125rem;
+        }
+
+        .theme-changer {
+          h3 {
+            margin-right: 1.625rem;
+            letter-spacing: 1px;
+          }
+
+          .option-group {
+            position: relative;
+
+            .labels {
+              margin: 0 10px;
+
+              span {
+                line-height: var(--size-100);
+              }
+            }
+
+            .inputs {
+              margin-top: 5px;
+              border-radius: var(--size-200);
+              
+              input {
+                &[type=radio] {
+                  display: none;
+                }
+              }
+
+              label {
+                cursor: pointer;
+                width: var(--size-400);
+                height: var(--size-400);
+                margin: 5px;
+                border-radius: 100vmax;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+
+      section {
+          &.display {
+              padding: var(--size-700);
+              border-radius: 10px;
+              text-align: right;
+              line-height: 3.25rem;
+              letter-spacing: -0.933333px;
+
+              @include media(mobile) {
+                padding: var(--size-500);
+                letter-spacing: -0.666667px;
+                font-size: var(--fs-800);
+                line-height: 2.3125rem;
+              }
+              
+          }
+
+          &.keypad {
+            margin-top: var(--size-500);
+            padding: var(--size-700);
+            border-radius: 10px;
+
+            @include media(mobile) {
+              padding: var(--size-500);
+            }
+
+            > div:not(:last-child) {
+              margin-bottom: var(--size-500);
+            }
+
+            button {
+              line-height: 2.3125rem;
+              letter-spacing: -0.666667px;
+              padding: var(--size-200);
+              border-radius: 10px;
+              width: 100px;
+              height: 64px;
+              border: none;
+              cursor: pointer;
+
+              @include media(mobile) {
+                border-radius: 5px;
+                width: 60px;
+                font-size: var(--fs-700);
+                padding: var(--size-100);
+              }
+
+              &.w-2x {
+                width: 227px;
+
+                @include media(mobile) {
+                  width: 133px;
+                }
+              }
+
+              &.text-200,
+              &.text-400 {
+                letter-spacing: -0.466667px;
+
+                @include media(mobile) {
+                  font-size: 1.25rem;
+                  line-height: 1.125rem;
+                  letter-spacing: -0.333333px;
+                }
+              }
+            }
+          }
+      }
+    }
+  }
+}
