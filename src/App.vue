@@ -17,6 +17,7 @@ export default {
     let num2 = ref(0);
     let process = ref(null);
     let display = ref(0);
+    let comma = ref(false);
 
     const result = {
       "+": () => {
@@ -37,12 +38,21 @@ export default {
     };
 
     const numericKeyPressed = (key) => {
-      if (!process.value) {
-        num1.value = parseFloat(`${num1.value}${key}`);
+      if (!process.value && key != ".") {
+        num1.value = comma.value
+          ? parseFloat(`${num1.value}.${key}`)
+          : parseFloat(`${num1.value}${key}`);
         display.value = num1.value;
-      } else {
-        num2.value = parseFloat(`${num2.value}${key}`);
+        comma.value = false;
+      } else if (process.value && key != ".") {
+        num2.value = comma.value
+          ? parseFloat(`${num2.value}.${key}`)
+          : parseFloat(`${num2.value}${key}`);
         display.value = num2.value;
+        comma.value = false;
+      } else {
+        comma.value = true;
+        display.value += ".";
       }
     };
 
@@ -63,6 +73,7 @@ export default {
       } else if (key == "reset") {
         num1.value = 0;
         num2.value = 0;
+        comma.value = false;
         process.value = null;
       }
 
