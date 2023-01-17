@@ -51,6 +51,7 @@
 import { ref } from "vue";
 
 export default {
+  name: "HeaderComponent",
   setup() {
     let theme = ref(1);
 
