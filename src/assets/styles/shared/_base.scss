@@ -72,6 +72,9 @@ body {
           text-align: right;
           line-height: 3.25rem;
           letter-spacing: -0.933333px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
 
           @include media(mobile) {
             padding: var(--size-500);
